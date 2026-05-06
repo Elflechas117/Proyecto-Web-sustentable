@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto — Proyectos Ecológicos Accesibles</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+      <h1>🌱 Proyectos Ecológicos</h1>
+      <nav aria-label="Menú principal">
+        <a href="/">Inicio</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/impacto">Impacto</a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section aria-labelledby="contacto-heading">
+        <h2 id="contacto-heading">Contáctanos</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem">
+          Escríbenos con tus dudas, propuestas o para unirte a un proyecto.
+        </p>
+
+        <form action="#" method="post" novalidate>
+          <div>
+            <label for="nombre">Nombre</label>
+            <input
+              id="nombre"
+              name="nombre"
+              type="text"
+              required
+              autocomplete="name"
+              placeholder="Tu nombre completo"
+            />
+          </div>
+
+          <div>
+            <label for="correo">Correo electrónico</label>
+            <input
+              id="correo"
+              name="correo"
+              type="email"
+              required
+              autocomplete="email"
+              placeholder="correo@ejemplo.com"
+            />
+          </div>
+
+          <div>
+            <label for="mensaje">Mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              required
+              placeholder="Escribe tu mensaje aquí…"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">Enviar mensaje</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Proyectos Ecológicos Accesibles</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
