@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyectos Ecológicos Accesibles</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+      <h1>🌱 Proyectos Ecológicos</h1>
+      <nav aria-label="Menú principal">
+        <a href="#inicio" id="ini">Inicio</a>
+        <a href="/impacto" id="impac">Impacto</a>
+        <a href="/proyectos" id="proy">Proyectos</a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <!-- HERO -->
+      <section id="inicio" class="hero" aria-labelledby="hero-heading">
+        <div class="hero-inner">
+          <h2 id="hero-heading">Construyendo un futuro sostenible</h2>
+          <p>
+            Explora proyectos ecológicos accesibles diseñados para mejorar el
+            medio ambiente y fomentar la participación comunitaria.
+          </p>
+
+          <div
+            class="a11y-controls"
+            role="group"
+            aria-label="Opciones de accesibilidad"
+          >
+            <span class="a11y-label" aria-hidden="true">Accesibilidad:</span>
+
+            <button
+              onclick="toggleContrast()"
+              aria-describedby="tip-contraste"
+              aria-pressed="false"
+              id="btn-contraste"
+            >
+              Alto contraste
+            </button>
+            <span id="tip-contraste" hidden>
+              Activa colores de alto contraste para facilitar la lectura.
+            </span>
+
+            <button
+              onclick="changeFontSize(2)"
+              aria-label="Aumentar tamaño de texto"
+            >
+              A+
+            </button>
+            <button
+              onclick="changeFontSize(-2)"
+              aria-label="Reducir tamaño de texto"
+            >
+              A−
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMPACTO -->
+      <section id="impacto" aria-labelledby="impacto-heading">
+        <h2 id="impacto-heading">Nuestro impacto</h2>
+        <div class="cards-grid">
+          <a
+            href="/impacto"
+            class="card-link"
+            aria-label="Ver detalles de árboles plantados"
+          >
+            <div class="card stat-card">
+              <h3>🌳 Reforestación urbana</h3>
+              <span class="stat-number">+500</span>
+              <p>árboles plantados</p>
+            </div>
+          </a>
+          <a
+            href="/impacto"
+            class="card-link"
+            aria-label="Ver detalles de reciclaje"
+          >
+            <div class="card stat-card">
+              <h3>♻️ Hogares reciclando</h3>
+              <span class="stat-number">+200</span>
+              <p>reducción de residuos</p>
+            </div>
+          </a>
+          <a
+            href="/impacto"
+            class="card-link"
+            aria-label="Ver detalles de ahorro de agua"
+          >
+            <div class="card stat-card">
+              <h3>💧 Agua ahorrada</h3>
+              <span class="stat-number">1 000 L</span>
+              <p>sistemas sostenibles</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- PROYECTOS -->
+      <section id="proyectos" aria-labelledby="proyectos-heading">
+        <h2 id="proyectos-heading">Proyectos destacados</h2>
+        <div class="cards-grid">
+          <a
+            href="/proyectos"
+            class="card-link"
+            aria-label="Ver proyecto Huerto Urbano"
+          >
+            <article class="card">
+              <h3>🌿 Huerto Urbano</h3>
+              <p>Cultivo sustentable en espacios pequeños.</p>
+            </article>
+          </a>
+          <a
+            href="/proyectos"
+            class="card-link"
+            aria-label="Ver proyecto Energía Solar"
+          >
+            <article class="card">
+              <h3>🌞 Energía Solar</h3>
+              <p>Uso de energías limpias.</p>
+            </article>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Proyectos Ecológicos Accesibles</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>

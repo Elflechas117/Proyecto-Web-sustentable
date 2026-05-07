@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyectos — Proyectos Ecológicos Accesibles</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+      <h1>🌱 Proyectos Ecológicos</h1>
+      <nav aria-label="Menú principal">
+        <a href="/">Inicio</a>
+        <a href="/impacto">Impacto</a>
+        <a href="/contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section aria-labelledby="proyectos-heading">
+        <h2 id="proyectos-heading">Listado de proyectos</h2>
+
+        <!-- FILTROS -->
+        <div
+          class="filtros"
+          role="group"
+          aria-label="Filtrar proyectos por categoría"
+        >
+          <button onclick="filtrar('todos')" aria-pressed="true">Todos</button>
+          <button onclick="filtrar('agua')" aria-pressed="false">Agua</button>
+          <button onclick="filtrar('energia')" aria-pressed="false">
+            Energía
+          </button>
+        </div>
+
+        <div class="cards-grid" id="lista-proyectos">
+          <article class="card" data-categoria="agua">
+            <h3>💧 Agua de lluvia</h3>
+            <p>
+              Captación y aprovechamiento de agua pluvial para uso doméstico.
+            </p>
+            <a href="/detalle" class="card-action">Ver más →</a>
+          </article>
+
+          <article class="card" data-categoria="energia">
+            <h3>🌞 Energía solar</h3>
+            <p>
+              Instalación de paneles solares básicos accesibles para el hogar.
+            </p>
+            <a href="/detalle" class="card-action">Ver más →</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Proyectos Ecológicos Accesibles</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
