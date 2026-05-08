@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuestro Impacto — Proyectos Ecológicos</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="animate-in fade-in">
+      <h1>
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='24px' height='24px'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M17.66 6.34C16.89 5.57 15.81 5 14.5 5 11 5 9.17 7.24 8 8.84 6.83 10.44 5 13 2 13c3.5 0 5.33-2.24 6.5-3.84C9.67 7.56 11.5 5 14.5 5c1.31 0 2.39.57 3.16 1.34L17.66 6.34zM19.14 12.94C17.63 11.22 15.31 10 12.5 10c-4 0-6.17 3.24-7.5 5.84C3.83 18.44 2 21 0 21c3.5 0 5.33-2.24 6.5-3.84.83-.83 1.67-.83 2.5-.83 2.31 0 4.14 1.22 5.66 2.94L19.14 12.94z'/%3E%3C/svg%3E"
+          alt=""
+          aria-hidden="true"
+        />
+        Proyectos Ecológicos
+      </h1>
+      <nav aria-label="Menú principal">
+        <a href="/">Inicio</a>
+        <a href="/impacto" class="active">Impacto</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main id="contenido" class="animate-in fade-in">
+      <section aria-labelledby="impacto-heading">
+        <h2 id="impacto-heading">Nuestro Impacto en 2026</h2>
+        <p class="texto">
+          Los números hablan por sí solos. Gracias a la comunidad, hemos logrado
+          avances increíbles este año.
+        </p>
+
+        <div
+          class="animate-in fade-in-up delay-2"
+          style="
+            position: relative;
+            height: 350px;
+            width: 100%;
+            max-width: 700px;
+            margin: 2rem 0;
+            background: var(--surface);
+            padding: 1rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+          "
+        >
+          <canvas id="miGrafica"></canvas>
+        </div>
+
+        <div class="cards-grid">
+          <div class="card stat-card animate-in fade-in-up delay-3">
+            <span class="stat-number">85%</span>
+            <p>De residuos reducidos en la zona sur.</p>
+          </div>
+          <div class="card stat-card animate-in fade-in-up delay-4">
+            <span class="stat-number">+1,200</span>
+            <p>Voluntarios activos este semestre.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Proyectos Ecológicos Accesibles</p>
+    </footer>
+
+    <script>
+      // Seleccionamos dónde dibujar
+      const ctx = document.getElementById("miGrafica").getContext("2d");
+
+      // Creamos la gráfica
+      const miGrafica = new Chart(ctx, {
+        type: "bar", // Puede ser 'line', 'pie', 'doughnut'
+        data: {
+          labels: [
+            "Árboles Plantados",
+            "Hogares Reciclando",
+            "Paneles Solares",
+            "Huertos Creados",
+          ], // Las categorías
+          datasets: [
+            {
+              label: "Crecimiento de la Iniciativa",
+              data: [500, 200, 45, 120], // Los números reales
+              backgroundColor: [
+                "rgba(47, 133, 90, 0.7)", // Verde oscuro
+                "rgba(56, 161, 105, 0.7)", // Verde claro
+                "rgba(214, 158, 46, 0.7)", // Amarillo/Dorado
+                "rgba(113, 128, 150, 0.7)", // Gris azulado
+              ],
+              borderColor: [
+                "rgba(47, 133, 90, 1)",
+                "rgba(56, 161, 105, 1)",
+                "rgba(214, 158, 46, 1)",
+                "rgba(113, 128, 150, 1)",
+              ],
+              borderWidth: 2,
+              borderRadius: 6, // Bordes redondeados en las barras
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: {
+            duration: 2000, // Tarda 2 segundos en animarse, se ve hermoso
+            easing: "easeOutQuart",
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>

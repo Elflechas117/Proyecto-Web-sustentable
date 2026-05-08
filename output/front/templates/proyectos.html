@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyectos — Proyectos Ecológicos Accesibles</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="animate-in fade-in">
+      <h1>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='24px' height='24px'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M17.66 6.34C16.89 5.57 15.81 5 14.5 5 11 5 9.17 7.24 8 8.84 6.83 10.44 5 13 2 13c3.5 0 5.33-2.24 6.5-3.84C9.67 7.56 11.5 5 14.5 5c1.31 0 2.39.57 3.16 1.34L17.66 6.34zM19.14 12.94C17.63 11.22 15.31 10 12.5 10c-4 0-6.17 3.24-7.5 5.84C3.83 18.44 2 21 0 21c3.5 0 5.33-2.24 6.5-3.84.83-.83 1.67-.83 2.5-.83 2.31 0 4.14 1.22 5.66 2.94L19.14 12.94z'/%3E%3C/svg%3E" alt="" aria-hidden="true">
+        Proyectos Ecológicos
+      </h1>
+      <nav aria-label="Menú principal">
+        <a href="/">Inicio</a>
+        <a href="/impacto">Impacto</a>
+        <a href="/proyectos" class="active">Proyectos</a>
+        <a href="/contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main id="contenido" class="animate-in fade-in">
+      <section aria-labelledby="proyectos-heading">
+        <h2 id="proyectos-heading">Listado de proyectos</h2>
+
+        <div
+          class="filtros animate-in fade-in-up delay-1"
+          role="group"
+          aria-label="Filtrar proyectos por categoría"
+        >
+          <button onclick="filtrar('todos')" aria-pressed="true">Todos</button>
+          <button onclick="filtrar('agua')" aria-pressed="false">Agua</button>
+          <button onclick="filtrar('energia')" aria-pressed="false">Energía</button>
+        </div>
+
+        <div class="cards-grid" id="lista-proyectos">
+          <article class="card project-card animate-in fade-in-up delay-2" data-categoria="agua">
+            <span class="project-status status-active">Activo</span>
+
+            <div class="project-image">💧</div>
+
+            <p class="project-tagline">Solución Doméstica</p>
+            <h3>Aprovechamiento Pluvial</h3>
+            
+            <p>
+              Captación y tratamiento de agua de lluvia para un uso sostenible en el hogar.
+            </p>
+            
+            <div class="project-team">
+                <div class="team-avatars">
+                    <span>JP</span>
+                    <span>LM</span>
+                </div>
+                <span>Liderado por: Juan Pérez</span>
+            </div>
+            
+            <a href="/detalle" class="card-action">Ver detalles técnicos →</a>
+          </article>
+
+          <article class="card project-card animate-in fade-in-up delay-3" data-categoria="energia">
+            <span class="project-status">Planeación</span>
+
+            <div class="project-image">🌞</div>
+
+            <p class="project-tagline">Energía Limpia</p>
+            <h3>Energía Solar Hogareña</h3>
+            
+            <p>
+              Instalación de paneles solares básicos accesibles para viviendas familiares.
+            </p>
+            
+            <div class="project-team">
+                <div class="team-avatars">
+                    <span>LM</span>
+                    <span>RC</span>
+                    <span>AF</span>
+                </div>
+                <span>Liderado por: Laura M.</span>
+            </div>
+
+            <a href="/detalle" class="card-action">Ver requisitos de instalación →</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Proyectos Ecológicos Accesibles</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>

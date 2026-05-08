@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Administración</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Sugerencias de Proyectos</h1>
+    <ul>
+      {% for sugerencia in sugerencias %}
+      <li>
+        <strong>{{ sugerencia.NombreProyecto }}</strong>: {{
+        sugerencia.Descripcion }}
+        <button onclick="aceptar({{ sugerencia.id }})">Aceptar</button>
+        <button onclick="rechazar({{ sugerencia.id }})">Rechazar</button>
+      </li>
+      {% endfor %}
+    </ul>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+      function aceptar(id) {
+        fetch("/aceptado", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: id }),
+        })
+          .then((response) => response.json())
+          .then((data) => alert(data.mensaje || data.error));
+      }
+      function rechazar(id) {
+        fetch("/rechazado", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: id }),
+        })
+          .then((response) => response.json())
+          .then((data) => alert(data.mensaje || data.error));
+      }
+    </script>
+  </body>
+</html>
