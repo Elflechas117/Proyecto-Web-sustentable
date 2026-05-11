@@ -1,0 +1,1021 @@
+/* =============================================
+   PROYECTOS ECOLÓGICOS — Estilos principales
+   ============================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap");
+
+/* ── Variables ── */
+:root {
+  --bg: #fdfcfb;
+  --surface: #ffffff;
+  --text: #2d3748;
+  --text-muted: #718096;
+  --primary: #2f855a;
+  --primary-dark: #22543d;
+  --primary-light: #f0fff4;
+  --accent: #38a169;
+  --accent-soft: #c6f6d5;
+  --border: #e2e8f0;
+  --focus: #d69e2e;
+  --radius: 16px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 10px 25px rgba(34, 84, 61, 0.15);
+  --transition: 300ms ease;
+  font-size: 18px;
+}
+
+/* ── Alto contraste ── */
+body.high-contrast {
+  --bg: #000000;
+  --surface: #111111;
+  --text: #ffffff;
+  --text-muted: #cccccc;
+  --primary: #00e676;
+  --primary-dark: #00c853;
+  --primary-light: #1a2a1a;
+  --accent: #69f0ae;
+  --accent-soft: #1a3a1a;
+  --border: #00e676;
+  --focus: #ffea00;
+  --shadow: none;
+  --shadow-hover: none;
+}
+
+/* ── Reset y base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", Georgia, serif;
+  line-height: 1.2;
+}
+
+/* ── Skip link (WCAG AAA) ── */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 12px;
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 1000;
+  text-decoration: none;
+  transition: top var(--transition);
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ── Header y nav ── */
+header {
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+nav a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+nav a.active,
+nav a[style*="black"] {
+  background: rgba(0, 0, 0, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  color: #fff !important;
+}
+
+/* ── Hero (¡CAMBIO GRANDE AQUÍ!) ── */
+.hero {
+  /* Imagen de fondo (puse una de bosque bonita de Unsplash) y un degradado oscuro para que se lea el texto */
+  background-image:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(34, 84, 61, 0.5) 100%),
+    url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2000&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Opcional: efecto parallax suave */
+  padding: 7rem 2rem 6rem; /* Más padding para impacto */
+  color: #ffffff; /* Todo el texto en el hero es blanco ahora */
+  border-bottom: none;
+  width: 100%; /* Asegurar que cubra todo el ancho */
+}
+
+/* En alto contraste quitamos la imagen de fondo */
+body.high-contrast .hero {
+  background-image: none;
+  background-color: var(--primary-light);
+  color: var(--text);
+}
+
+.hero-inner {
+  max-width: 680px;
+  margin: 0 auto; /* Centrar el contenido */
+  padding-left: 0; /* Asegurar que el contenido respete los márgenes */
+  padding-right: 0;
+}
+
+.hero h2 {
+  font-size: clamp(2rem, 5vw, 3rem); /* Letra más grande */
+  color: #ffffff; /* Blanco puro */
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave para legibilidad */
+}
+
+.hero p {
+  font-size: 1.2rem; /* Letra un poco más grande */
+  color: rgba(255, 255, 255, 0.9); /* Blanco suave */
+  margin-bottom: 2.5rem;
+  max-width: 55ch;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Controles de accesibilidad en hero */
+.a11y-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.1); /* Fondito sutil */
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  display: inline-flex; /* Para que no ocupe todo el ancho */
+}
+
+.a11y-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 0.25rem;
+}
+
+/* Ajuste de botones dentro del hero */
+.hero button {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ── Botones ── */
+button {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--primary-dark);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+button:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(47, 133, 90, 0.3);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+button.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+button.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+/* ── Secciones ── */
+section {
+  padding: 3rem 2rem;
+}
+
+section + section {
+  border-top: 1px solid var(--border);
+}
+
+section h2 {
+  font-size: 1.7rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--accent-soft);
+  display: inline-block;
+}
+
+/* ── Cards (Mantenemos el estilo moderno flotante) ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Tarjetas un poco más anchas */
+  gap: 2rem; /* Más espacio para que respiren */
+  margin-top: 0.5rem;
+}
+
+a.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius);
+}
+
+a.card-link:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+/* ── Estilos de Tarjeta (MEJORADO) ── */
+.card {
+  background: var(--surface);
+  border: none;
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  box-shadow: var(--shadow);
+  transition:
+    box-shadow var(--transition),
+    transform var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+a.card-link:hover .card,
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-dark);
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  flex-grow: 1; /* Para que la descripción llene el espacio */
+}
+
+/* ── Stat cards (impacto) ── */
+.stat-card {
+  background: linear-gradient(145deg, #ffffff, var(--primary-light));
+  border: none;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.stat-number {
+  display: block;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+  margin-top: 0.5rem;
+}
+
+/* ── Filtros ── */
+.filtros {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.filtros button {
+  padding: 8px 20px;
+  font-size: 0.9rem;
+}
+
+.filtros button[aria-pressed="true"] {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ── Links de acción en cards ── */
+.card-action {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.card-action:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Volver link ── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.back-link:hover {
+  border-bottom-color: var(--primary);
+}
+
+.back-link:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Formulario contacto ── */
+form {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.btn-enviar {
+  color: var(--bg);
+  text-decoration: none;
+}
+
+/* ── Listas de contenido ── */
+main ul,
+main ol {
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+main li {
+  color: var(--text-muted);
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  header {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero {
+    padding: 4rem 1rem 3rem; /* Padding más pequeño en celulares */
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── ANIMACIONES DE ENTRADA (Mantenemos) ── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+.fade-in {
+  animation-name: fadeIn;
+}
+.fade-in-up {
+  animation-name: fadeInUp;
+}
+.delay-1 {
+  animation-delay: 0.1s;
+}
+.delay-2 {
+  animation-delay: 0.2s;
+}
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+/* ── NUEVOS ESTILOS PARA TARJETAS DE PROYECTOS (¡LA IDEA GORDA!) ── */
+.project-card {
+  position: relative; /* Para el estado (activo/planeación) */
+  overflow: hidden; /* Para que la imagen respete los bordes */
+}
+
+/* Ícono/Imagen grande en la tarjeta */
+.project-image {
+  background-color: var(--primary-light);
+  height: 180px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  font-size: 4rem; /* Tamaño de ícono grande */
+  border: 1px solid var(--border);
+}
+
+/* Tagline corto y pegajoso */
+.project-tagline {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.texto {
+  color: var(--primary-dark);
+}
+
+/* Estado del proyecto (En Planeación/Activo) */
+.project-status {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background-color: var(--focus); /* Amarillo para planeación */
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estado activo (Verde) */
+.status-active {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+/* Sección de equipo */
+.project-team {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Avatares falsos de equipo */
+.team-avatars {
+  display: flex;
+}
+.team-avatars span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+  border: 2px solid var(--surface);
+  margin-right: -8px; /* Efecto apilado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+.team-avatars span:nth-child(1) {
+  background-color: var(--primary);
+}
+.team-avatars span:nth-child(2) {
+  background-color: var(--accent);
+}
+.team-avatars span:nth-child(3) {
+  background-color: var(--focus);
+  color: var(--text);
+}
+
+/* Boton para Contactos que manda peticion a admin.html ADRIAN*/
+
+
+.contact-layout {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 3rem;
+
+  padding: 2rem;
+}
+
+/* FORMULARIO */
+.contact-form {
+  width: 45%;
+}
+
+/* PANEL */
+.upload-panel {
+  width: 45%;
+
+  background: var(--surface);
+
+  padding: 2rem;
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  border: 1px solid var(--border);
+}
+
+/* TITULO */
+.upload-panel h3 {
+  color: var(--primary-dark);
+
+  margin-bottom: 1rem;
+}
+
+/* TEXTO */
+.upload-panel p {
+  color: var(--text-muted);
+
+  margin-bottom: 1rem;
+}
+
+/* RECUADRO */
+.upload-box {
+  border: 2px dashed var(--accent);
+
+  border-radius: var(--radius);
+
+  padding: 2rem;
+
+  text-align: center;
+
+  background: var(--primary-light);
+}
+
+/* BOTON */
+.upload-btn {
+  background: var(--primary);
+
+  color: white;
+
+  border: none;
+
+  padding: 0.9rem 1.5rem;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.upload-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* NOMBRE ARCHIVO */
+#file-name {
+  margin-top: 1rem;
+
+  color: var(--text-muted);
+
+  font-size: 0.9rem;
+}
+
+/* INFO */
+.upload-info {
+  margin-top: 1.5rem;
+
+  line-height: 1.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+  .contact-layout {
+    flex-direction: column;
+  }
+
+  .contact-form,
+  .upload-panel {
+    width: 100%;
+  }
+}
+
+/* Diseño pagina admin ADRIAN Xd */
+
+.admin-main {
+  display: flex;
+
+  min-height: calc(100vh - 90px);
+}
+
+
+.admin-sidebar {
+  width: 280px;
+
+  background: var(--primary-dark);
+
+  color: white;
+
+  padding: 2rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+.admin-sidebar h2 {
+  color: white;
+
+  border: none;
+
+  margin-bottom: 1rem;
+}
+
+
+.admin-menu-btn {
+  background: rgba(255, 255, 255, 0.1);
+
+  color: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  text-align: left;
+
+  padding: 1rem;
+
+  border-radius: 12px;
+
+  transition: 0.3s;
+}
+
+.admin-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.admin-menu-btn.active {
+  background: var(--accent);
+
+  color: white;
+}
+
+
+.admin-content {
+  flex: 1;
+
+  padding: 2rem;
+}
+
+.admin-header h2 {
+  margin-bottom: 0.5rem;
+}
+
+.admin-header p {
+  color: var(--text-muted);
+
+  margin-bottom: 2rem;
+}
+
+.proposal-card {
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 2rem;
+
+  box-shadow: var(--shadow);
+
+  border: 1px solid var(--border);
+}
+
+.proposal-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 1rem;
+}
+
+.proposal-status {
+  padding: 0.5rem 1rem;
+
+  border-radius: 50px;
+
+  font-size: 0.85rem;
+
+  font-weight: bold;
+}
+
+.pending {
+  background: #fff3cd;
+
+  color: #856404;
+}
+
+.proposal-user {
+  color: var(--text-muted);
+
+  margin-top: 0.3rem;
+}
+
+.proposal-description {
+  margin-bottom: 1.5rem;
+
+  color: var(--text);
+}
+
+.proposal-file {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background: var(--primary-light);
+
+  padding: 1rem;
+
+  border-radius: 12px;
+
+  margin-bottom: 1.5rem;
+}
+
+
+.download-btn {
+  background: var(--primary);
+
+  color: white;
+}
+
+
+.proposal-actions {
+  display: flex;
+
+  gap: 1rem;
+}
+
+
+.approve-btn {
+  background: #2e8b57;
+
+  color: white;
+}
+
+
+.reject-btn:hover {
+  background: #b71c1c; /* rojo más oscuro */
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(198, 40, 40, 0.3);
+}
+
+.reject-btn:focus-visible {
+  outline: none; /* o un borde rojo si quieres */
+}
+
+
+
+@media (max-width: 900px) {
+
+  .admin-main {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+  }
+}
+
+.charts-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.chart-card {
+  flex: 1;
+  max-width: 600px; 
+}
+
+.chart-card canvas {
+  max-width: 200%;
+  max-height: 350px; 
+}
+
+/* =========================
+   ACCESIBILIDAD
+========================= */
+
+:root {
+  font-size: 18px;
+}
+
+/* Alto contraste */
+
+body.high-contrast {
+  background: #000;
+  color: #fff;
+}
+
+body.high-contrast header,
+body.high-contrast footer,
+body.high-contrast section {
+  background: #111;
+  color: #fff;
+}
+
+body.high-contrast a {
+  color: #00ff99;
+}
+
+body.high-contrast .card {
+  background: #1a1a1a;
+  border: 2px solid #00ff99;
+}
+
+/* Botones accesibilidad */
+
+.a11y-controls {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.a11y-controls button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #2e7d32;
+  color: white;
+  transition: 0.3s;
+}
+
+.a11y-controls button:hover {
+  opacity: 0.8;
+}

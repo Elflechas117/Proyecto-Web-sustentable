@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Impacto — Proyectos Ecológicos Accesibles</title>
+
+    <link rel="stylesheet" href="/static/css/styles.css" />
+
+    <!-- CHART.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+
+    <a href="#contenido" class="skip-link">
+      Saltar al contenido principal
+    </a>
+
+    <!-- HEADER -->
+    <header>
+
+      <h1>🌱 Proyectos Ecológicos</h1>
+
+      <nav aria-label="Menú principal">
+        <a href="/">Inicio</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/impacto">Impacto</a>
+        <a href="/contacto">Contacto</a>
+      </nav>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-inner">
+
+        <h2>
+          Impacto Ambiental y Social
+        </h2>
+
+        <p>
+          Visualiza el alcance de nuestros proyectos ecológicos
+          y cómo contribuyen a los Objetivos de Desarrollo Sostenible.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- CONTENIDO -->
+    <main id="contenido">
+
+      <!-- TARJETAS -->
+      <section>
+
+        <h2>
+          Resultados alcanzados
+        </h2>
+
+        <div class="cards-grid">
+
+          <article class="stat-card">
+            <h3>🌳 Árboles plantados</h3>
+            <span class="stat-number">
+              1,250
+            </span>
+          </article>
+
+          <article class="stat-card">
+            <h3>💧 Litros ahorrados</h3>
+            <span class="stat-number">
+              18,500
+            </span>
+          </article>
+
+          <article class="stat-card">
+            <h3>♻ Residuos reciclados</h3>
+            <span class="stat-number">
+              3.2T
+            </span>
+          </article>
+
+        </div>
+
+      </section>
+
+      <!-- GRAFICAS -->
+      <section>
+
+        <h2>
+          Estadísticas visuales
+        </h2>
+
+        <div class="charts-container">
+
+          <!-- GRAFICA BARRAS -->
+          <div class="chart-card">
+
+            <h3>
+              Proyectos por categoría
+            </h3>
+
+            <canvas id="graficaBarras"></canvas>
+
+          </div>
+
+          <!-- GRAFICA PASTEL -->
+          <div class="chart-card">
+
+            <h3>
+              Distribución de impacto
+            </h3>
+
+            <canvas id="graficaPastel"></canvas>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        © 2026 Proyectos Ecológicos Accesibles
+      </p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+
+      // =============================================
+      // GRAFICA DE BARRAS
+      // =============================================
+
+      const barras = document.getElementById("graficaBarras");
+
+      new Chart(barras, {
+
+        type: "bar",
+
+        data: {
+
+          labels: [
+            "Reciclaje",
+            "Agua",
+            "Energía",
+            "Reforestación"
+          ],
+
+          datasets: [{
+
+            label: "Cantidad de proyectos",
+
+            data: [12, 8, 6, 15],
+
+            borderWidth: 1
+
+          }]
+
+        },
+
+        options: {
+
+          responsive: true,
+
+          scales: {
+
+            y: {
+
+              beginAtZero: true
+
+            }
+
+          }
+
+        }
+
+      });
+
+
+      // GRAFICA PASTEL
+
+
+      const pastel = document.getElementById("graficaPastel");
+
+      new Chart(pastel, {
+
+        type: "pie",
+
+        data: {
+
+          labels: [
+            "ODS 6",
+            "ODS 13",
+            "ODS 15"
+          ],
+
+          datasets: [{
+
+            data: [35, 40, 25]
+
+          }]
+
+        },
+
+        options: {
+
+          responsive: true
+
+        }
+
+      });
+
+    </script>
+
+  </body>
+</html>

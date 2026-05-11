@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Panel Administrador</title>
+
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+
+  <body>
+
+    
+    <header>
+
+      <h1>🛠 Panel Administrador</h1>
+
+      <nav aria-label="Menú administrador">
+        <a href="/">Inicio</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/admin">Administrador</a>
+      </nav>
+
+    </header>
+
+    
+    <main class="admin-main">
+
+      
+      <aside class="admin-sidebar">
+
+        <h2>Opciones</h2>
+
+        <button class="admin-menu-btn active">
+          📂 Propuestas recibidas
+        </button>
+
+        <button class="admin-menu-btn">
+          ✅ Proyectos aprobados
+        </button>
+
+        <button class="admin-menu-btn">
+          ❌ Proyectos rechazados
+        </button>
+
+      </aside>
+
+      
+      <section class="admin-content">
+
+        <div class="admin-header">
+
+          <h2>Propuestas pendientes</h2>
+
+          <p>
+            Revisa las propuestas enviadas por los usuarios.
+          </p>
+
+        </div>
+
+
+<article class="proposal-card">
+
+  <div class="proposal-top">
+
+    <div>
+
+      <h3>
+        🌱 Propuesta ecológica
+      </h3>
+
+      <p class="proposal-user">
+
+        Enviado por:
+        
+        <strong>
+            
+            nombre 
+
+        </strong>
+
+      </p>
+
+    </div>
+
+    <span class="proposal-status pending">
+
+      p.estado
+
+    </span>
+
+  </div>
+
+  <p class="proposal-description">
+
+    
+
+  </p>
+
+  <div class="proposal-file">
+
+    <span>
+
+      📄 archivo 
+
+    </span>
+
+    <a
+    >
+
+      <button class="download-btn">
+
+        Descargar
+
+      </button>
+
+    </a>
+
+  </div>
+
+  <div class="proposal-actions">
+
+    <button class="approve-btn">
+      ✅ Aprobar
+    </button>
+
+    <button class="reject-btn">
+      ❌ Rechazar
+    </button>
+
+  </div>
+
+</article>
+

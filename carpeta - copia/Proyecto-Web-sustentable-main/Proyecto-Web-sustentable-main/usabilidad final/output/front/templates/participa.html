@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Participa — Proyectos Ecológicos</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🌱 Proyectos Ecológicos</h1>
+      <nav>
+        <a href="/">Inicio</a>
+        <a href="/impacto">Impacto</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/participa" class="active">Participa</a>
+        <a href="/contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="form-section">
+        <h2>Propón tu Proyecto</h2>
+        <div class="form-container">
+          <form action="#" method="POST">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="desc">Idea</label>
+              <textarea id="desc" name="desc" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer><p>© 2026 Proyectos Ecológicos</p></footer>
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
