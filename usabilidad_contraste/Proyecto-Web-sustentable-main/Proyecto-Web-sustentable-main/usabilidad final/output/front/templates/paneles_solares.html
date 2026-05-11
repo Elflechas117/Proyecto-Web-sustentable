@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paneles Solares — Proyectos Ecológicos Accesibles</title>
+
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+
+  <body>
+    <a href="#contenido" class="skip-link">
+      Saltar al contenido principal
+    </a>
+
+    <header>
+      <h1>🌞 Proyectos Ecológicos</h1>
+
+      <nav aria-label="Menú principal">
+        <a href="/">Inicio</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/impacto">Impacto</a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+
+      <section aria-labelledby="detalle-heading">
+
+        <a href="/proyectos" class="back-link">
+          ← Volver a proyectos
+        </a>
+        <br>
+        <h2 id="detalle-heading" style="margin-top: 1rem">
+          🌞 Paneles Solares
+        </h2>
+
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem">
+          Sistema de energía renovable basado en paneles fotovoltaicos
+          capaces de transformar la energía solar en electricidad,
+          permitiendo reducir el consumo energético convencional y
+          fomentar el uso de recursos sustentables.. La energía 
+          generada pasa a través de un medidor, que la cuantifica. Luego
+           continúa hacia una caja de suministro eléctrico, donde se distribuye
+            hacia la red del lugar.
+        </p>
+
+         <img 
+           src="{{ url_for('static', filename='img/paneles_solares.jpg') }}" 
+           alt="Paneles solares"
+           height="50%"
+           width="350"
+           style="display: block; margin: 0 auto;"
+           >
+
+        <h3
+          style="
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-dark);
+          "
+        >
+          Beneficios
+        </h3>
+
+        <ul style="margin-bottom: 1.5rem">
+          <li>Reduce significativamente el gasto de electricidad</li>
+          <li>Disminuye la contaminación ambiental</li>
+          <li>Genera energía limpia y renovable</li>
+          <li>Reduce la dependencia de combustibles fósiles</li>
+        </ul>
+
+        <h3
+          style="
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-dark);
+          "
+        >
+          Cómo implementarlo
+        </h3>
+
+        <ol>
+          <li>Seleccionar una zona con buena exposición solar</li>
+          <li>Instalar paneles solares en techos o estructuras seguras</li>
+          <li>Conectar el sistema a un inversor eléctrico</li>
+          <li>Realizar mantenimiento periódico para mayor eficiencia</li>
+        </ol>
+
+      </section>
+
+    </main>
+
+    <footer>
+      <p>© 2026 Proyectos Ecológicos Accesibles</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>

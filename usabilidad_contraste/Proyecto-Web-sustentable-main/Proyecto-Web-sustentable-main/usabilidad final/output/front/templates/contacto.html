@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto — Proyectos Ecológicos Accesibles</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+      <h1>🌱 Proyectos Ecológicos</h1>
+      <nav aria-label="Menú principal">
+        <a href="/">Inicio</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/impacto">Impacto</a>
+      </nav>
+    </header>
+
+
+    <main id="contenido">
+
+      <div class="contact-layout">
+
+        <!-- FORMULARIO -->
+        <section class="contact-form" aria-labelledby="contacto-heading">
+
+          <h2 id="contacto-heading">Contáctanos</h2>
+
+          <p class="contact-description">
+            Escríbenos con tus dudas, propuestas o para unirte a un proyecto.
+          </p>
+
+          <form
+            action="contacto.html"
+            method="post"
+            enctype="multipart/form-data"
+            novalidate
+          >
+
+            <div>
+              <label for="nombre">Nombre</label>
+
+              <input
+                id="nombre"
+                name="nombre"
+                type="text"
+                required
+                autocomplete="name"
+                placeholder="Tu nombre completo"
+              />
+            </div>
+
+            <div>
+              <label for="correo">Correo electrónico</label>
+
+              <input
+                id="correo"
+                name="correo"
+                type="email"
+                required
+                autocomplete="email"
+                placeholder="correo@ejemplo.com"
+              />
+            </div>
+
+            <div>
+              <label for="mensaje">Mensaje</label>
+
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                required
+                placeholder="Escribe tu mensaje aquí…"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">
+              Enviar mensaje
+            </button>
+
+          </form>
+
+        </section>
+
+        
+        <aside class="upload-panel">
+
+          <h3>📂 Compartir propuesta</h3>
+
+          <p>
+            Sube imágenes, documentos o archivos relacionados con tu proyecto
+            ecológico para que el administrador pueda revisarlo.
+          </p>
+
+          <div class="upload-box">
+
+            <input
+              id="archivo"
+              name="archivo"
+              type="file"
+              accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
+            />
+
+            <button type="button" class="upload-btn">
+              Subir archivo
+            </button>
+
+          </div>
+
+          <div class="upload-info">
+            <p>✔ Imágenes PNG y JPG</p>
+            <p>✔ Documentos PDF</p>
+            <p>✔ Archivos Word</p>
+            <p>✔ Revisión por administrador</p>
+          </div>
+
+        </aside>
+
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Proyectos Ecológicos Accesibles</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
