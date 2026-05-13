@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impacto — Proyectos Ecológicos Accesibles</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+      <h1>🌱 Proyectos Ecológicos</h1>
+      <nav aria-label="Menú principal">
+        <a href="/">Inicio</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/impacto" class="active">Impacto</a>
+        <a href="/contacto">Contacto</a>
+        <button id="dark-mode-toggle" class="btn-theme" aria-label="Cambiar tema">🌙</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <h2>Impacto Ambiental y Social</h2>
+        <p>Visualiza el alcance de nuestros proyectos ecológicos y cómo contribuyen a los Objetivos de Desarrollo Sostenible.</p>
+      </div>
+    </section>
+
+    <main id="contenido">
+      <section>
+        <h2>Resultados alcanzados</h2>
+        <div class="cards-grid">
+          <article class="stat-card">
+            <h3>🌳 Árboles plantados</h3>
+            <span class="stat-number">1,250</span>
+          </article>
+          <article class="stat-card">
+            <h3>💧 Litros ahorrados</h3>
+            <span class="stat-number">18,500</span>
+          </article>
+          <article class="stat-card">
+            <h3>♻ Residuos reciclados</h3>
+            <span class="stat-number">3.2T</span>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Estadísticas visuales y ODS</h2>
+        <div class="charts-container">
+          <div class="chart-card">
+            <h3>Proyectos por categoría</h3>
+            <canvas id="graficaBarras"></canvas>
+          </div>
+
+          <div class="ods-container">
+            <h3>Impacto en los ODS</h3>
+            <div class="ods-grid">
+              <article class="ods-card ods-6">
+                <div class="ods-icon">💧</div>
+                <h4>ODS 6</h4>
+                <p class="ods-title">Agua Limpia y Saneamiento</p>
+                <div class="ods-reveal">
+                  <p>Ahorramos más de 18,500 litros de agua instalando sistemas de captación en zonas vulnerables.</p>
+                </div>
+              </article>
+              
+              <article class="ods-card ods-13">
+                <div class="ods-icon">🌍</div>
+                <h4>ODS 13</h4>
+                <p class="ods-title">Acción por el Clima</p>
+                <div class="ods-reveal">
+                  <p>Reducimos la huella de carbono reciclando 3.2 toneladas de residuos al año.</p>
+                </div>
+              </article>
+
+              <article class="ods-card ods-15">
+                <div class="ods-icon">🌱</div>
+                <h4>ODS 15</h4>
+                <p class="ods-title">Vida de Ecosistemas Terrestres</p>
+                <div class="ods-reveal">
+                  <p>Restauramos hábitats locales y prevenimos la erosión plantando más de 1,250 árboles.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Proyectos Ecológicos Accesibles</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+
+    <script>
+      // GRAFICA DE BARRAS
+      const barras = document.getElementById("graficaBarras");
+      new Chart(barras, {
+        type: "bar",
+        data: {
+          labels: ["Reciclaje", "Agua", "Energía", "Reforestación"],
+          datasets: [{
+            label: "Cantidad de proyectos",
+            data: [12, 8, 6, 15],
+            backgroundColor: 'rgba(34, 197, 94, 0.6)', // Color verde ecológico
+            borderColor: 'rgba(34, 197, 94, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

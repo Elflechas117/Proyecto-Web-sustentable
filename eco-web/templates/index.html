@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio — Proyectos Ecológicos</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="animate-in fade-in">
+      <h1>Proyectos Ecológicos</h1>
+      <nav aria-label="Menú principal">
+        <a href="/" id="ini" class="active">Inicio</a>
+        <a href="/impacto" id="impac">Impacto</a>
+        <a href="/proyectos" id="proy">Proyectos</a>
+        <a href="/contacto">Contacto</a>
+        <a href="/participa">Participa</a>
+        <button id="dark-mode-toggle" class="btn-theme" aria-label="Cambiar tema">🌙</button>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section id="inicio" class="hero animate-in fade-in">
+        <div class="hero-inner">
+          <h2>Construyendo un futuro sostenible</h2>
+          <p>
+            Únete a nuestra iniciativa para crear soluciones ecológicas
+            accesibles para todas las comunidades.
+          </p>
+
+          <div class="a11y-controls">
+            <button onclick="toggleContrast()" id="btn-contraste">Alto contraste</button>
+            <button onclick="changeFontSize(2)">A+</button>
+            <button onclick="changeFontSize(-2)">A-</button>
+          </div>
+
+          <a href="/proyectos" class="btn-enviar">Ver proyectos</a>
+        </div>
+      </section>
+
+      <section class="animate-in fade-in-up delay-1">
+        <h2>¿Qué hacemos?</h2>
+        <p>
+          Promovemos alternativas de bajo costo para el cuidado del medio ambiente.
+          Los proyectos ecológicos son iniciativas diseñadas para proteger el medio ambiente
+          y promover el uso responsable de los recursos naturales mediante tecnologías sostenibles
+          e innovadoras.
+        </p>
+      </section>
+
+      <section class="project-zones animate-in fade-in-up delay-2">
+        <h2>Proyectos por categoría</h2>
+        <div class="zones-grid">
+
+          <a href="/paneles_solares" class="zone-card zone-energia">
+            <div class="zone-icon">🌞</div>
+            <h3>Energía Solar</h3>
+            <p>Paneles fotovoltaicos que transforman la luz del sol en electricidad limpia para tu hogar.</p>
+            <div class="zone-stats">
+              <span>☀️ 6 proyectos</span>
+              <span>⚡ 340 kWh/mes</span>
+            </div>
+            <span class="zone-link">Ver proyecto →</span>
+          </a>
+
+          <a href="/pluvial" class="zone-card zone-agua">
+            <div class="zone-icon">💧</div>
+            <h3>Agua Pluvial</h3>
+            <p>Sistemas de captación, filtración y almacenamiento de agua de lluvia para uso doméstico.</p>
+            <div class="zone-stats">
+              <span>💧 8 proyectos</span>
+              <span>📦 18,500 L ahorrados</span>
+            </div>
+            <span class="zone-link">Ver proyecto →</span>
+          </a>
+
+          <a href="/reciclaje" class="zone-card zone-residuos">
+            <div class="zone-icon">♻️</div>
+            <h3>Gestión de Residuos</h3>
+            <p>Separación, reutilización y reciclaje de residuos domésticos para reducir la contaminación.</p>
+            <div class="zone-stats">
+              <span>♻️ 12 proyectos</span>
+              <span>📊 3.2T reciclados</span>
+            </div>
+            <span class="zone-link">Ver proyecto →</span>
+          </a>
+
+        </div>
+      </section>
+    </main>
+
+    <div id="toast-container"></div>
+    <button id="btn-volver-arriba" aria-label="Volver al inicio">⬆️</button>
+
+    <footer>
+      <p>© 2026 Proyectos Ecológicos Accesibles</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>

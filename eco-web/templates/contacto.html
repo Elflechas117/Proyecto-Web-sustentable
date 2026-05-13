@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto — Proyectos Ecológicos</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+      <h1>Proyectos Ecológicos</h1>
+      <nav>
+        <a href="/">Inicio</a>
+        <a href="/impacto">Impacto</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/contacto" class="active">Contacto</a>
+        <a href="/participa">Participa</a>
+        <button id="dark-mode-toggle" class="btn-theme" aria-label="Cambiar tema">🌙</button>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="contact-section">
+        <h2 class="text-center">Contáctanos</h2>
+        <p class="text-center" style="color: var(--text-muted); margin-bottom: 1.5rem">
+          Escríbenos con tus dudas o sugerencias.
+        </p>
+        <form action="/contacto" method="POST" class="smart-form">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" required>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-submit">Enviar mensaje</button>
+        </form>
+      </section>
+    </main>
+
+    <div id="toast-container"></div>
+    <button id="btn-volver-arriba" aria-label="Volver al inicio">⬆️</button>
+
+    <footer><p>© 2026 Proyectos Ecológicos Accesibles</p></footer>
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>

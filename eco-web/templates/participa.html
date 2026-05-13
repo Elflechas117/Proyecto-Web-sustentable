@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Participa — Proyectos Ecológicos</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+  <header>
+    <h1>Proyectos Ecológicos</h1>
+    <nav aria-label="Menú principal">
+      <a href="/">Inicio</a>
+      <a href="/proyectos">Proyectos</a>
+      <a href="/impacto">Impacto</a>
+      <a href="/contacto">Contacto</a>
+      <a href="/participa" class="active">Participa</a>
+      <button id="dark-mode-toggle" class="btn-theme" aria-label="Cambiar tema">🌙</button>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="contact-section" aria-labelledby="participa-heading">
+      <h2 id="participa-heading" class="text-center reveal">Propón tu Proyecto</h2>
+      <p class="contact-description text-center reveal">
+        Escríbenos tu idea o usa el botón mágico para subir tu propuesta ecológica.
+      </p>
+
+      <form action="/participa" method="post" enctype="multipart/form-data" novalidate class="smart-form reveal">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" required autocomplete="name" placeholder="Tu nombre completo" />
+        </div>
+
+        <div class="form-group">
+          <label for="correo">Correo electrónico</label>
+          <input id="correo" name="correo" type="email" required autocomplete="email" placeholder="correo@ejemplo.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" required placeholder="Describe tu idea de proyecto…"></textarea>
+        </div>
+
+        <button type="button" id="btn-magico" class="btn-toggle">
+          ¿Tienes un proyecto en mente? Adjunta tu archivo aquí
+        </button>
+
+        <div id="panel-propuesta" class="hidden-panel">
+          <h3>Compartir propuesta</h3>
+          <p>Sube imágenes o documentos para que el administrador los revise.</p>
+          <div class="upload-box">
+            <input id="archivo" name="archivo" type="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" />
+          </div>
+          <div class="upload-info">
+            <small>Imágenes PNG y JPG | Documentos PDF y Word</small>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary btn-submit">Enviar propuesta</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="toast-container"></div>
+  <button id="btn-volver-arriba" aria-label="Volver al inicio">⬆️</button>
+
+  <footer>
+    <p>© 2026 Proyectos Ecológicos Accesibles</p>
+  </footer>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>

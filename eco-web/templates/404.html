@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% if error_code == 404 %}Página no encontrada{% else %}Error interno{%
+      endif %} — Proyectos Ecológicos
+    </title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="animate-in fade-in">
+      <h1>Proyectos Ecológicos</h1>
+      <nav aria-label="Menú principal">
+        <a href="/">Inicio</a>
+        <a href="/impacto">Impacto</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/contacto">Contacto</a>
+        <a href="/participa">Participa</a>
+        <button
+          id="dark-mode-toggle"
+          class="btn-theme"
+          aria-label="Cambiar tema"
+        >
+          🌙
+        </button>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="error-page animate-in fade-in-up">
+        <div class="error-code">
+          {% if error_code == 404 %}404{% else %}500{% endif %}
+        </div>
+        <h2>
+          {% if error_code == 404 %}Página no encontrada{% else %}Algo salió
+          mal{% endif %}
+        </h2>
+        <p>
+          {% if error_code == 404 %} La página que buscas no existe o fue
+          movida. Revisa la URL o vuelve al inicio. {% else %} Ocurrió un error
+          inesperado. Estamos trabajando para solucionarlo. {% endif %}
+        </p>
+        {% if error_message %}
+        <div class="error-details">{{ error_message }}</div>
+        {% endif %}
+        <div class="error-actions">
+          <a href="/" class="btn-home">Volver al inicio</a>
+          <a href="javascript:history.back()" class="btn-back"
+            >Página anterior</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Proyectos Ecológicos Accesibles</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>

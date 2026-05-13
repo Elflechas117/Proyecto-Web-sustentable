@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos — Proyectos Ecológicos Accesibles</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <style>
+    .hidden-by-search { display: none !important; }
+  </style>
+</head>
+<body>
+  <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+  <header class="animate-in fade-in">
+    <h1>Proyectos Ecológicos</h1>
+    <nav aria-label="Menú principal">
+      <a href="/">Inicio</a>
+      <a href="/impacto">Impacto</a>
+      <a href="/proyectos" class="active">Proyectos</a>
+      <a href="/contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="contenido" class="animate-in fade-in">
+    <section aria-labelledby="proyectos-heading">
+      <h2 id="proyectos-heading" class="text-center">Listado de proyectos</h2>
+
+      <div class="search-container text-center animate-in fade-in-up delay-1">
+        <input type="text" id="buscador-proyectos" class="search-input" placeholder="Buscar por nombre, palabra clave o encargado..." aria-label="Buscar proyectos" />
+      </div>
+
+      <div class="filtros animate-in fade-in-up delay-1" role="group" aria-label="Filtrar proyectos por categoría">
+        <button onclick="filtrar('todos')" aria-pressed="true">Todos</button>
+        <button onclick="filtrar('agua')" aria-pressed="false">Agua</button>
+        <button onclick="filtrar('energia')" aria-pressed="false">Energía</button>
+        <button onclick="filtrar('gestion residuos')" aria-pressed="false">Gestión de Residuos</button>
+      </div>
+
+      <div class="cards-grid" id="lista-proyectos">
+        <article class="card project-card animate-in fade-in-up delay-2" data-categoria="agua">
+          <span class="project-status status-active">Activo</span>
+          <div class="project-image">💧</div>
+          <p class="project-tagline">Solución Doméstica</p>
+          <h3>Aprovechamiento Pluvial</h3>
+          <p>Sistema ecológico de captación, filtración y almacenamiento de agua de lluvia para reutilizarla en actividades domésticas.</p>
+          <div class="project-team">
+            <div class="team-avatars"><span>JP</span><span>LM</span></div>
+            <span>Liderado por: Juan Pérez</span>
+          </div>
+          <a href="/pluvial" class="card-action">Ver detalles técnicos →</a>
+        </article>
+
+        <article class="card project-card animate-in fade-in-up delay-3" data-categoria="energia">
+          <span class="project-status">Planeación</span>
+          <div class="project-image">🌞</div>
+          <p class="project-tagline">Energía Limpia</p>
+          <h3>Energía Solar Hogareña</h3>
+          <p>Implementación de sistemas de energía solar sustentable mediante paneles fotovoltaicos accesibles para hogares.</p>
+          <div class="project-team">
+            <div class="team-avatars"><span>LM</span><span>RC</span><span>AF</span></div>
+            <span>Liderado por: Laura M.</span>
+          </div>
+          <a href="/paneles_solares" class="card-action">Ver requisitos de instalación →</a>
+        </article>
+
+        <article class="card project-card animate-in fade-in-up delay-4" data-categoria="gestion residuos">
+          <span class="project-status status-active">Activo</span>
+          <div class="project-image">♻️</div>
+          <p class="project-tagline">Reciclaje Urbano</p>
+          <h3>Gestión de Residuos</h3>
+          <p>Separación, reutilización y reciclaje de residuos domésticos para reducir la contaminación ambiental.</p>
+          <div class="project-team">
+            <div class="team-avatars"><span>AG</span><span>MT</span></div>
+            <span>Liderado por: Jonathan Gomez</span>
+          </div>
+          <a href="/reciclaje" class="card-action">Ver estrategias de reciclaje →</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Proyectos Ecológicos Accesibles</p>
+  </footer>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accesibilidad — Proyectos Ecológicos Accesibles</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+      <h1>🌱 Proyectos Ecológicos</h1>
+      <nav aria-label="Menú principal">
+        <a href="/">Inicio</a>
+        <a href="/proyectos">Proyectos</a>
+        <a href="/contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section aria-labelledby="a11y-heading">
+        <h2 id="a11y-heading">Accesibilidad</h2>
+        <p class="detalle-desc">
+          Este sitio cumple con estándares WCAG nivel AAA para garantizar acceso
+          universal sin importar las capacidades del usuario.
+        </p>
+
+        <h3 class="detalle-sub">
+          Funciones disponibles
+        </h3>
+        <ul>
+          <li>Modo alto contraste para baja visión</li>
+          <li>Ajuste de tamaño de texto (A+ / A−)</li>
+          <li>Navegación completa por teclado</li>
+          <li>Compatibilidad con lectores de pantalla</li>
+          <li>Enlace "saltar al contenido" en cada página</li>
+          <li>Etiquetas ARIA en todos los controles interactivos</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Proyectos Ecológicos Accesibles</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
